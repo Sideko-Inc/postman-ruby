@@ -1,0 +1,16 @@
+
+name: Publish To RubyGems
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dawidd6/action-publish-gem@v1
+        with:
+          api_key: ${{ secrets.SIDEKO_RUBYGEMS_API_KEY }}
+
